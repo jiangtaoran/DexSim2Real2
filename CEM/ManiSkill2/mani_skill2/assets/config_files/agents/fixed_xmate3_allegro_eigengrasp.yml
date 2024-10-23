@@ -1,0 +1,135 @@
+agent_class: "FixedXmate3Allegro"
+name: "fixed_xmate3_allegro"
+urdf_file: "arm_hand.urdf"
+urdf_config:
+  materials:
+    tip:
+      # static_friction: 20.0
+      # dynamic_friction: 20.0
+      static_friction: 0.0
+      dynamic_friction: 0.0
+      restitution: 0.0
+  links:
+    link_15.0:
+      material: "tip"
+      patch_radius: 0.1
+      min_patch_radius: 0.1
+    link_11.0:
+      material: "tip"
+      patch_radius: 0.1
+      min_patch_radius: 0.1
+    link_7.0:
+      material: "tip"
+      patch_radius: 0.1
+      min_patch_radius: 0.1
+    link_3.0:
+      material: "tip"
+      patch_radius: 0.1
+      min_patch_radius: 0.1
+default_init_qpos: [0, 0.5, 0, 0.5, 0, 0.5, 0,
+                    0.0, 0.0]
+default_control_mode: "pd_joint_pos"
+torque_freq: 10
+cameras:
+  - name: "base_camera"
+    mount: "camera_base_link"
+    hide_mount_link: true
+    mount_p: [ 0,0,0 ]
+    mount_q: [ 1,0,0,0 ]
+    width: 1920
+    height: 1080
+    near: 0.001
+    far: 10
+    fx: 1380
+    fy: 1380
+    cx: 960
+    cy: 540
+    skew: 0
+sensors: []
+
+controllers:
+  pd_joint_pos:
+    - controller_type: "GeneralPDJointPosController"
+      interpolate: false
+      use_delta: false
+      control_joints: [ 'joint1', 'joint2',
+                        'joint3', 'joint4',
+                        'joint5', 'joint6',
+                        'joint7', ]
+      controller_name: "ArmController"
+      joint_pos_min: -3.0527
+      joint_pos_max: 3.0527
+      joint_stiffness: 3000
+      joint_damping: 100
+      joint_friction: 0
+    - controller_type: "MoreGeneralPDJointPosController_Eigen"
+      interpolate: false
+      use_delta: false
+      eigen_dim: 2
+      grasp_model_path: "/home/rvsa/EigenGrasp/grasp_model_2.pkl"
+      control_joints: [ 'joint_0.0', 'joint_1.0','joint_2.0','joint_3.0',
+                        'joint_4.0', 'joint_5.0','joint_6.0','joint_7.0',
+                        'joint_8.0', 'joint_9.0','joint_10.0','joint_11.0',
+                        'joint_12.0','joint_13.0','joint_14.0','joint_15.0' ]
+      controller_name: "HandController"
+      joint_pos_min: [-0.47,-0.196,-0.174,-0.227,
+                      -0.47,-0.196,-0.174,-0.227,
+                      -0.47,-0.196,-0.174,-0.227,
+                      0.263,-0.105,-0.189,-0.162]
+      joint_pos_max: [0.47,1.61,1.709,1.618,
+                      0.47,1.61,1.709,1.618,
+                      0.47,1.61,1.709,1.618,
+                      1.396,1.163,1.644,1.719]
+      joint_stiffness: [600,600,600,1000,
+                        600,600,600,1000,
+                        600,600,600,1000,
+                        1000,1000,1000,600]
+      joint_damping: [15,20,15,15,
+                      15,20,15,15,
+                      15,20,15,15,
+                      30,20,20,15]
+      joint_friction: [0,0,0,0,
+                      0,0,0,0,
+                      0,0,0,0,
+                      0,0,0,0]
+  pd_joint_delta_pos:
+    - controller_type: "GeneralPDJointPosController"
+      interpolate: false
+      use_delta: true
+      control_joints: [ 'joint1', 'joint2',
+                        'joint3', 'joint4',
+                        'joint5', 'joint6',
+                        'joint7', ]
+      controller_name: "ArmController"
+      joint_delta_pos_min: -0.05
+      joint_delta_pos_max: 0.05
+      # joint_stiffness: 3000
+      # joint_damping: 1
+      joint_stiffness: [3000, 3000, 3000, 3000, 3000, 3000, 3000]
+      joint_damping: [100, 100, 100, 100, 100, 100, 100]
+      joint_friction: 0
+    - controller_type: "MoreGeneralPDJointPosController_Eigen"
+      interpolate: false
+      use_delta: true
+      eigen_dim: 2
+      grasp_model_path: "/home/rvsa/EigenGrasp/grasp_model_2.pkl"
+      control_joints: [ 'joint_0.0', 'joint_1.0','joint_2.0','joint_3.0',
+                        'joint_4.0', 'joint_5.0','joint_6.0','joint_7.0',
+                        'joint_8.0', 'joint_9.0','joint_10.0','joint_11.0',
+                        'joint_12.0','joint_13.0','joint_14.0','joint_15.0']
+      controller_name: "HandController"
+      joint_delta_pos_min: -0.05
+      joint_delta_pos_max: 0.05
+      joint_stiffness: [600,600,600,1000,
+                        600,600,600,1000,
+                        600,600,600,1000,
+                        1000,1000,1000,600]
+      joint_damping: [15,20,15,15,
+                      15,20,15,15,
+                      15,20,15,15,
+                      30,20,20,15]
+      joint_friction: [0,0,0,0,
+                      0,0,0,0,
+                      0,0,0,0,
+                      0,0,0,0]
+  
