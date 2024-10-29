@@ -6,14 +6,22 @@ DexSim2Real 2 : Building Explicit World Model for Precise Articulated Object Dex
 
 ## Introduction
 Our DexSim2Real2 algorithm has 3 parts, **Interactive Perception**, **Explicit Physics Model Construction**, **Sampling Based Model Predictive Control**. 
-For **Interactive Perception** module, We utilize [VRB](https://github.com/shikharbahl/vrb) and pixel warping method to acquire affordance. 
+
+For **Interactive Perception** module, We utilize [VRB](https://github.com/shikharbahl/vrb) and pixel warping method to acquire affordance.
+
 For Explicit Physics Model Construction module, we use [Ditto] as our construction module. 
+
 For Sampling-based Model Predictive Control Module,we choose [ManiSkill2](https://github.com/haosulab/ManiSkill2) and [ManiSkill2-Learn](https://github.com/haosulab/ManiSkill2-Learn) as the basic framework. Besides, we utilize EigenGrasp method to reduce the action dimension of dexterous hand. Corresponding can be found in the repo.
 
 ## File Structure
 The file structure is listed as follows:
+
 'vrb'
+
 'Ditto'
+
 'CEM'
+
 'EigenGrasp'
+
 You can also try [where2act](https://github.com/daerduoCarey/where2act) method for interactive perception, which is also mentioned in our work.
