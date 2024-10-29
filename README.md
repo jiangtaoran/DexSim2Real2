@@ -6,6 +6,7 @@ DexSim2Real 2 : Building Explicit World Model for Precise Articulated Object Dex
 [Website](https://jiangtaoran.github.io/dexsim2real2_website)|[arXiv](https://arxiv.org/abs/2409.08750)|[Video](https://www.youtube.com/watch?v=gW9AHF2zDFY)
 
 ## Introduction
+(https://jiangtaoran.github.io/dexsim2real2_website/static/images/method.jpg)
 Our DexSim2Real2 algorithm has 3 parts, **Interactive Perception**, **Explicit Physics Model Construction**, **Sampling Based Model Predictive Control**. 
 
 For **Interactive Perception** module, We utilize [VRB](https://github.com/shikharbahl/vrb) and pixel warping method to acquire affordance.
