@@ -1,7 +1,7 @@
 # DexSim2Real2
 DexSim2Real 2 : Building Explicit World Model for Precise Articulated Object Dexterous Manipulation
 
-![teaser_video](https://jiangtaoran.github.io/dexsim2real2_website/static/videos/sim_real_experiment.mp4)
+![teaser_video](./teaser.gif)
 
 [Website](https://jiangtaoran.github.io/dexsim2real2_website)|[arXiv](https://arxiv.org/abs/2409.08750)|[Video](https://www.youtube.com/watch?v=gW9AHF2zDFY)
 
