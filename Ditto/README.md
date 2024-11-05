@@ -6,7 +6,7 @@ CVPR 2022
 
 [Project](https://ut-austin-rpl.github.io/Ditto/) | [arxiv](https://arxiv.org/abs/2202.08227)
 
-![intro](assets/pipeline.png)
+![intro](./pipeline.png)
 
 ## Introduction
 <ins></ins>Ditto (<ins>Di</ins>gital <ins>T</ins>wins of Ar<ins>t</ins>iculated <ins>O</ins>bjects) is a model that reconstructs part-level geometry and articulation model of an articulated object given observations before and after an interaction. Specifically, we use a PointNet++ encoder to encoder the input point cloud observations, and fuse the subsampled point features with a simple attention layer. Then we use two independent decoders to propagate the fused point features into two sets of dense point features, for geometry reconstruction and articulation estimation separately. We construct feature grid/planes by projecting and pooling the point features, and query local features from the constructed feature grid/planes. Conditioning on local features, we use different decoders to predict occupancy, segmentation and joint parameters with respect to the query points. At then end, we can extract explicit geometry and articulation model from the implicit decoders.
