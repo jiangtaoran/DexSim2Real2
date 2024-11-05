@@ -41,5 +41,6 @@ mkdir models
 To run the model: 
 
 ```
-python demo.py --image ./kitchen.jpeg --model_path ./models/model_checkpoint_1249.pth.tar
+cd vrb_3d
+python demo.py --image ../kitchen.jpeg --model_path ../models/model_checkpoint_1249.pth.tar
 ```
