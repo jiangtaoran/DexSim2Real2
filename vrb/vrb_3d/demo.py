@@ -68,6 +68,3 @@ if __name__ == "__main__":
 
     main(args)
     print("All done !")
-'''
-python demo.py --image="./room.jpg" --model_path="./../models/model_checkpoint_1249.pth.tar" 
-'''
