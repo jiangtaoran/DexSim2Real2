@@ -48,7 +48,7 @@ def compute_heatmap(points, image_size, k_ratio=3.0):
     heatmap = cv2.GaussianBlur(heatmap, (k_size, k_size), 0)
     if heatmap.max() > 0:
         heatmap /= heatmap.max()
-    heatmap = heatmap.transpose()   #转秩800*800
+    heatmap = heatmap.transpose()   
     return heatmap
 
 def run_inference(net, image_pil, strr): 
@@ -74,7 +74,7 @@ def run_inference(net, image_pil, strr):
         
         diff = width - height
         if width > height:
-            y1 += int(diff / np.random.uniform(1.5, 2.5))#随机数1.5与2.5范围内
+            y1 += int(diff / np.random.uniform(1.5, 2.5))
             y2 -= int((diff / (np.random.uniform(1.5, 2.5) + diff % 2)))
         else:
             diff = height - width
@@ -162,7 +162,7 @@ def run_inference_2(net,image_pil):
 
     # diff = width - height
     # if width > height:
-    #     x1 += int(diff / np.random.uniform(1.5, 2.5))  # 随机数1.5与2.5范围内
+    #     x1 += int(diff / np.random.uniform(1.5, 2.5)) 
     #     x2 -= int((diff / (np.random.uniform(1.5, 2.5) + diff % 2)))
     # else:
     #     diff = height - width
@@ -215,7 +215,6 @@ def run_inference_2(net,image_pil):
     overlay = (0.6*original_img +  0.4 *hmap).astype(np.uint8)
     plt.imshow(overlay)
     for i, cp in enumerate(contact_points):
-        #print(i) 枚举，i仅有一个0值
         x2, y2, dx, dy = trajectories[i]
         scale = 60/max(abs(dx), abs(dy))
         x, y = cp[:, 0] , cp[:, 1]
