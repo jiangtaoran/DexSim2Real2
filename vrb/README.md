@@ -31,9 +31,15 @@ pip install -r requirements.txt
 pip install -U git+https://github.com/luca-medeiros/lang-segment-anything.git
 ```
 
-Either download the [model weights](https://drive.google.com/file/d/1nzahuDh4Wa0SXCPwpu9Z_MwkQGerGAhp/view?usp=sharing) and place in `models` folders or run: 
+Download the [model weights](https://drive.google.com/file/d/1nzahuDh4Wa0SXCPwpu9Z_MwkQGerGAhp/view?usp=sharing) and place in `models` folders: 
 
 ```
 mkdir models
-bash download_model.sh
+```
+
+### Running VRB
+To run the model: 
+
+```
+python demo.py --image ./kitchen.jpeg --model_path ./models/model_checkpoint_1249.pth.tar
 ```
