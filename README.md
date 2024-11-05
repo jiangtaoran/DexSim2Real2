@@ -3,7 +3,12 @@ DexSim2Real 2 : Building Explicit World Model for Precise Articulated Object Dex
 
 ![teaser_video](./teaser.gif)
 
-[Website](https://jiangtaoran.github.io/dexsim2real2_website)|[arXiv](https://arxiv.org/abs/2409.08750)|[Video](https://www.youtube.com/watch?v=gW9AHF2zDFY)
+## Links
+- [Project Website](https://jiangtaoran.github.io/dexsim2real2_website)
+- [arXiv](https://arxiv.org/abs/2409.08750)
+- [Project Video](https://www.youtube.com/watch?v=gW9AHF2zDFY)
+- [Twitter Thread](https://x.com/taoranjiang/status/1837069837475967290?s=46)
+- [Previous Conference Version](https://arxiv.org/abs/2302.10693)
 
 ## Introduction
 
