@@ -75,7 +75,7 @@ def pixel_to_world(point_in_pixel,depth_intrin, real_camera = True):
     mat_transform = np.array([[0, 1, 0, 0], [-1, 0, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])
     point_in_world = world_to_camera @ mat_transform @ point_in_camera
     return point_in_world
-###################################################################################################################
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--num_heads', type=int, default=8, help='num of heads in transformer')
 parser.add_argument('--enc_depth', type=int, default=6, help='transformer encoder depth')
@@ -92,7 +92,7 @@ parser.add_argument("--manual_seed", default=0, type=int, help="manual seed")
 parser.add_argument('--model_path', type=str, default='../models/model_checkpoint_1249.pth.tar')
 
 args = parser.parse_args()
-####################################################################################################################
+
 def generate_spatial_trajectory(args,rgba_img,points_world,depth_intrin):
     gi = GenerateImg(rgba_img,points_world, depth_intrin)
     gi.camera_matrix_transform()
