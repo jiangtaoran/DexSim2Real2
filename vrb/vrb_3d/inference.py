@@ -1,7 +1,5 @@
 import cv2
 from sklearn.mixture import GaussianMixture
-
-
 import argparse
 import os
 import random
@@ -23,10 +21,7 @@ transform  = transforms.Compose([transforms.Resize((224, 224)),
                                         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
 
 
-
-
-
-model = LangSAM() #9.11 note for a while
+model = LangSAM() 
 def compute_heatmap(points, image_size, k_ratio=3.0):
     points = np.asarray(points)
     heatmap = np.zeros((image_size[0], image_size[1]), dtype=np.float32)
@@ -145,36 +140,20 @@ def run_inference(net, image_pil, strr):
     plt.close()
     return im,x_start, y_start, x_len, y_len, max_index
 
-# write in 2023.9.11 to ignore the object box
+
 def run_inference_2(net,image_pil):
     x1=0
     y1=0
     x2 = np.size(image_pil)[1]
     y2 = np.size(image_pil)[0]
-
     contact_points = []
     trajectories = []
-
-
-
     width = y2-y1
     height = x2-x1
-
-    # diff = width - height
-    # if width > height:
-    #     x1 += int(diff / np.random.uniform(1.5, 2.5)) 
-    #     x2 -= int((diff / (np.random.uniform(1.5, 2.5) + diff % 2)))
-    # else:
-    #     diff = height - width
-    #     y1 += int(diff / np.random.uniform(1.5, 2.5))
-    #     y2 -= int((diff / (np.random.uniform(1.5, 2.5) + diff % 2)))
-
     img = np.asarray(image_pil)
     input_img = img[x1:x2,y1:y2]
 
-   #img = np.asarray(image_pil)
-    #input_img = img[x1:x2, y1:y2]
-    #input_img = img
+
     inp_img = Image.fromarray(input_img)
     inp_img = transform(inp_img).unsqueeze(0)
     gm = GaussianMixture(n_components=1, covariance_type='diag')
@@ -193,21 +172,18 @@ def run_inference_2(net,image_pil):
         trajs.append(ic[0, 2:])
     gm.fit(np.vstack(centers))
     cp, indx = gm.sample(50)
-    #print("trajs:", trajs)
+
     x2, y2 = np.vstack(trajs)[np.random.choice(len(trajs))]
-    #print("x2:",x2)
-    #print("y2:",y2)
     dx, dy = np.array([x2, y2])*np.array([h, w]) + np.random.randn(2)*traj_scale
-    #print(np.array([x2, y2])*np.array([h, w]))
+  
     scale = 40/max(abs(dx), abs(dy))
     adjusted_cp = np.array([y1, x1]) + cp
     contact_points.append(adjusted_cp)
     trajectories.append([x2, y2, dx, dy])
-    
 
     original_img = np.asarray(image_pil)
     hmap = compute_heatmap(np.vstack(contact_points), (original_img.shape[1],original_img.shape[0]), k_ratio = 6)
-    # jtr 2023.10.4
+
     max_index = np.argmax(hmap)
 
     hmap = (hmap * 255).astype(np.uint8)
