@@ -24,13 +24,13 @@ def pos_to_mat44(pos,r_x,b_y,a_z):
 class GenerateImg(RgbAndMesh):
     def __init__(self,rgba_img, points_world, depth_intrin):
         self.rm = RgbAndMesh(use_gui=False)
-        self.rgba_img = rgba_img[:,:,:4]  #存储真实相机位置点云,同时也存储真实相机位置的rgb图像
+        self.rgba_img = rgba_img[:,:,:4]  
         self.points_world = points_world
         self.fx = depth_intrin.fx
         self.fy = depth_intrin.fy
         self.ppx = depth_intrin.ppx
         self.ppy = depth_intrin.ppy
-        # self.rgba_img 是H*W*4；position是H*W*4，是点相对于相机坐标系的三维位置外加一维的归一化深度；points_world是相对于sapien_world的点云位置
+       
 
     def camera_matrix_transform(self):
         '''
@@ -106,8 +106,5 @@ class GenerateImg(RgbAndMesh):
         return
 
 if __name__ =="__main__":
-    # gi = GenerateImg()
-    # gi.camera_matrix_transform()
-    # gi.generate_img_2()
     mat44 = pos_to_mat44([0.191, 0, 0.718] ,0, 1.0, -np.pi/2)
     print(mat44)
