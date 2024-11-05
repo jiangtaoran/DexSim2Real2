@@ -254,8 +254,5 @@ class GenerateImg(RgbAndMesh):
 
         return
 
-if __name__ == "__main__":
-    # rm = RgbAndMesh(use_gui = True)
-    # rgba_img, position, points_world=rm.demo(10098)
-    a=[[1,1,1],[2,2,2],[3,3,3],[4,4,4]]
-    print(np.shape(a))
+ 
+
