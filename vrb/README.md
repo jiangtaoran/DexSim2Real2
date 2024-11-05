@@ -44,3 +44,19 @@ To run the model:
 cd vrb_3d
 python demo.py --image ../kitchen.jpeg --model_path ../models/model_checkpoint_1249.pth.tar
 ```
+## Running Interactive Perception
+To generate 3D post-contact vector, first obtain RGB image and depth information of the obejct and run:
+
+```
+python generate_spatial_traj.py
+```
+To validate the generated traj:
+
+```
+pyothon visualize_traj.py
+```
+
+<p float="left">
+  <img src="./docs/result.png" width="50%" />
+</p>
+
