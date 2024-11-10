@@ -1,14 +1,28 @@
-# DexSim2Real2
-DexSim2Real 2 : Building Explicit World Model for Precise Articulated Object Dexterous Manipulation
+<div align='center'>
+
+<h2>DexSim2Real<sup>2</sup> : Building Explicit World Model for Precise Articulated Object Dexterous Manipulation</h2>
+
+
+[Taoran Jiang](https://github.com/jiangtaoran) <sup>\* </sup>, [Liqian Ma](https://github.com/TTimelord) <sup>\* </sup>, Yixuan Guan, Jiaojiao Meng, Weihang Chen, Zecui Zeng, Lusong Li, Dan Wu, Jing Xu, [Rui Chen](https://callmeray.github.io/homepage/)
+
+Department of Mechanical Engineering, Tsinghua University
+
+<sup>* </sup>Equal Contribution
+
+</div>
+
+<div align="center">
+
+[![arXiv](https://img.shields.io/badge/arXiv-2406.17741-red)](https://arxiv.org/abs/2409.08750)
+[![Project Page](https://img.shields.io/badge/Project-page-yellow
+)](https://jiangtaoran.github.io/dexsim2real2_website)
+[![Video](https://img.shields.io/badge/Demo-huggingface-orange
+)](https://www.youtube.com/watch?v=gW9AHF2zDFY)
+
 
 ![teaser_video](./teaser.gif)
 
-## Links
-- [Project Website](https://jiangtaoran.github.io/dexsim2real2_website)
-- [arXiv](https://arxiv.org/abs/2409.08750)
-- [Project Video](https://www.youtube.com/watch?v=gW9AHF2zDFY)
-- [Twitter Thread](https://x.com/taoranjiang/status/1837069837475967290?s=46)
-- [Previous Conference Version](https://arxiv.org/abs/2302.10693)
+</div>
 
 ## Introduction
 
@@ -35,4 +49,16 @@ You can also try [where2act](https://github.com/daerduoCarey/where2act) method f
       primaryClass={cs.RO},
       url={https://arxiv.org/abs/2409.08750}, 
 }
+```
+Previous conference version of our work Sim2Real<sup>2 </sup>:
+```
+@INPROCEEDINGS{10160370,
+  author={Ma, Liqian and Meng, Jiaojiao and Liu, Shuntao and Chen, Weihang and Xu, Jing and Chen, Rui},
+  booktitle={2023 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={Sim2Real2: Actively Building Explicit Physics Model for Precise Articulated Object Manipulation}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={11698-11704},
+  doi={10.1109/ICRA48891.2023.10160370}}
 ```
