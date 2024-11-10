@@ -13,10 +13,10 @@ Department of Mechanical Engineering, Tsinghua University
 
 <div align="center">
 
-[![arXiv](https://img.shields.io/badge/arXiv-2406.17741-red)](https://arxiv.org/abs/2409.08750)
-[![Project Page](https://img.shields.io/badge/Project-page-yellow
+[![arXiv](https://img.shields.io/badge/arXiv-2409.08750-red)](https://arxiv.org/abs/2409.08750)
+[![Project Page](https://img.shields.io/badge/Project-website-yellow
 )](https://jiangtaoran.github.io/dexsim2real2_website)
-[![Video](https://img.shields.io/badge/Demo-huggingface-orange
+[![Video](https://img.shields.io/badge/Video-youtube-orange
 )](https://www.youtube.com/watch?v=gW9AHF2zDFY)
 
 
