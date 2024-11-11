@@ -29,14 +29,19 @@ Department of Mechanical Engineering, Tsinghua University
 ![frame](https://jiangtaoran.github.io/dexsim2real2_website/static/images/method.jpg)
 Our DexSim2Real2 algorithm has 3 parts, **Interactive Perception**, **Explicit Physics Model Construction**, **Sampling Based Model Predictive Control**. 
 
-For **Interactive Perception** module, We utilize [VRB](https://github.com/shikharbahl/vrb) and pixel warping method to acquire affordance.
+For **Interactive Perception** module, We utilize [VRB](https://github.com/shikharbahl/vrb) and pixel warping method to acquire affordance. You can also try [where2act](https://github.com/daerduoCarey/where2act) method for interactive perception, which is also mentioned in our work.
 
 For **Explicit Physics Model Construction** module, we use [Ditto](https://github.com/UT-Austin-RPL/Ditto) as our construction module. 
 
 For **Sampling-based Model Predictive Control** Module,we choose [ManiSkill2](https://github.com/haosulab/ManiSkill2) and [ManiSkill2-Learn](https://github.com/haosulab/ManiSkill2-Learn) as the basic framework. Besides, we utilize EigenGrasp method to reduce the action dimension of dexterous hand. Corresponding can be found in the repo.
 
-You can also try [where2act](https://github.com/daerduoCarey/where2act) method for interactive perception, which is also mentioned in our work.
+To conduct the whole process, we first capture the RGB image and depth information of the object and use **vrb** generate 3D contact point and post-contact vector. Then we write a script to drive the end effector to interact with the object with Moveit. Secondly, we use **Ditto** to generate world model of the object as URDF file. Finally, we use CEM to accurately manipulate the object in simulation. Another scriot is required to replay the trajectory on real robot. 
 
+
+## Installation
+This code has been tested on Ubuntu 20.04 with Cuda 11.6, Python3.8, and PyTorch 1.11.0.
+
+1
 
 ## Citation
 ```
@@ -50,7 +55,7 @@ You can also try [where2act](https://github.com/daerduoCarey/where2act) method f
       url={https://arxiv.org/abs/2409.08750}, 
 }
 ```
-Previous conference version of our work Sim2Real<sup>2 </sup>:
+Previous conference versio Sim2Real<sup>2 </sup>:
 ```
 @INPROCEEDINGS{10160370,
   author={Ma, Liqian and Meng, Jiaojiao and Liu, Shuntao and Chen, Weihang and Xu, Jing and Chen, Rui},
